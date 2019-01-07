@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Consulta";
+}
+
+@using projetoWhois.Models
+
+@model ResponseView
+@{
+    if (Model.Success)
+    {
+        if (!@Model.WhoisInfo.Registrado)
+        {
+            <div class="row"><h1 id="disponivel"><strong>Disponível para registro!</strong></h1></div>
+        }
+        else
+            if (Model.WhoisInfo != null)
+        {
+            <div class="row dados-whois col-md-12">
+                <h2><strong>@Model.WhoisInfo.Dominio.ToUpper()</strong></h2>
+                <p><strong>Data de registro de domínio: </strong>@Model.WhoisInfo.DataRegistro</p>
+                <p><strong>Data da última alteração: </strong>@Model.WhoisInfo.DataAlteracao</p>
+                <p><strong>Data de expiração do domínio: </strong>@Model.WhoisInfo.DataExpiracao</p>
+                @foreach (var item in Model.WhoisInfo.NameServers.Select((value, i) => new { i = i + 1, value }))
+                {
+                    <p><strong> Name server @item.i: </strong> @item.value </p>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <div class="row"><h1 id="indisponivel"><strong>Domínio inválido!</strong></h1></div>
+    }
+}
+

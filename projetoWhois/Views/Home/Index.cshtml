@@ -1,0 +1,22 @@
+﻿@using projetoWhois.Models
+
+@model ResponseView
+<div class="row consulta">
+    <section class="row">
+        @using (Html.BeginForm("Consulta", "Home", FormMethod.Post, new { @class = "simform" }))
+        {
+            <div class="simform-inner">
+                <span><label for="dominio">Pesquise um domínio</label></span>
+                <input id="dominio" name="dominio" class="col-md-12" type="text" />
+            </div>
+            <div class="controls">
+                <button class="next" type="submit"></button>
+            </div>
+        }
+        @if (Model != null)
+        {
+            Html.RenderPartial("Consulta");
+        }
+    </section>
+
+</div>
