@@ -5,9 +5,9 @@
 <h2>Histórico das consultas</h2>
 @{foreach (var item in Model)
     {
-        <div class="row dados-whois col-md-8">
-            <h1 id="indisponivel"><strong>Domínio inválido!</strong></h1>
+        <div class="row dados-historico col-md-8">
             <h2><strong>@item.Dominio</strong></h2>
+            <p><strong>Registrado: </strong>@item.Registrado</p>
             <p><strong>Data de registro de domínio: </strong>@item.DataRegistro</p>
             <p><strong>Data da última alteração: </strong>@item.DataAlteracao</p>
             <p><strong>Data de expiração do domínio: </strong>@item.DataExpiracao</p>

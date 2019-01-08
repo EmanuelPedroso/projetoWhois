@@ -7,16 +7,17 @@
         {
             <div class="simform-inner">
                 <span><label for="dominio">Pesquise um domínio</label></span>
-                <input id="dominio" name="dominio" class="col-md-12" type="text" />
+                <input id="dominio" name="dominio" class="col-md-12" type="text" placeholder="exemplo.com.br" />
             </div>
             <div class="controls">
                 <button class="next" type="submit"></button>
             </div>
         }
-        @if (Model != null)
-        {
-            Html.RenderPartial("Consulta");
-        }
+
     </section>
 
 </div>
+@if (Model != null)
+{
+    Html.RenderPartial("Consulta");
+}

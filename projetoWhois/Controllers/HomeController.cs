@@ -41,7 +41,7 @@ namespace projetoWhois.Controllers
             }
             catch (Exception ex)
             {
-                return View("Index",new ResponseView() { Message = "Domínio inválido", Success = false});
+                return View("Index",new ResponseView() {Message = "Domínio inválido", Success = false});
                 throw;
             }
            

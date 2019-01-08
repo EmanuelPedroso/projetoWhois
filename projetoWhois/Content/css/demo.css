@@ -99,8 +99,10 @@ a:hover, a:focus {
 
 section {
     padding: 5em 2em 10em;
-    background: #EF843C;
-    text-align: center;
+    box-shadow: 0px 0px 15px black;
+    background-color: #EF843C;
+    text-align: justify;
+    border-radius: 5px;
 }
 
 section.related {
